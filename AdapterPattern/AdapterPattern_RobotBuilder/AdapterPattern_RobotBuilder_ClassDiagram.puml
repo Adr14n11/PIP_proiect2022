@@ -1,0 +1,82 @@
+@startuml
+enum adapterPattern.robotBuilder.enums.PartEnum {
++  Backrest
++  Leg
++  Seat
++  Handle
++  TableTop
+}
+interface adapterPattern.robotBuilder.table.Table {
++ String getTableCollectionName()
++ String getTableColor()
++ List<PartEnum> getTableParts()
++ List<ToolEnum> getTableTools()
++ void setTableCollectionName(String)
++ void setTableColor(String)
++ void setTableParts(List<PartEnum>)
++ void setTableTools(List<ToolEnum>)
++ void showTableDetails()
++ boolean checkTablePartsAndTools(List<PartEnum>,List<ToolEnum>)
+}
+class adapterPattern.robotBuilder.RobotBuilder {
++ {static} void main(String[])
+}
+class adapterPattern.robotBuilder.BedToTableAdapterBuilder {
+- String TableCollectionName
+- String TableColor
+- List<PartEnum> TableParts
+- List<ToolEnum> TableTools
+- Bed bed
++ String getTableCollectionName()
++ String getTableColor()
++ List<PartEnum> getTableParts()
++ List<ToolEnum> getTableTools()
++ void setTableCollectionName(String)
++ void setTableColor(String)
++ void setTableParts(List<PartEnum>)
++ void setTableTools(List<ToolEnum>)
++ void showTableDetails()
++ boolean checkTablePartsAndTools(List<PartEnum>,List<ToolEnum>)
+- void setProp()
+}
+class adapterPattern.robotBuilder.BedBuilder {
+- String BedCollectionName
+- String BedColor
+- List<PartEnum> BedParts
+- List<ToolEnum> BedTools
++ String getBedCollectionName()
++ String getBedColor()
++ List<PartEnum> getBedParts()
++ List<ToolEnum> getBedTools()
++ void setBedCollectionName(String)
++ void setBedColor(String)
++ void setBedParts(List<PartEnum>)
++ void setBedTools(List<ToolEnum>)
++ void showBedDetails()
++ boolean checkBedPartsAndTools()
+}
+enum adapterPattern.robotBuilder.enums.ToolEnum {
++  Hammer
++  Screwdriver
++  ImbusKey
++  NailsPackOf5
++  ScrewsPackOf7
++  ScrewsPackOf4
+}
+interface adapterPattern.robotBuilder.bed.Bed {
++ String getBedCollectionName()
++ String getBedColor()
++ List<PartEnum> getBedParts()
++ List<ToolEnum> getBedTools()
++ void setBedCollectionName(String)
++ void setBedColor(String)
++ void setBedParts(List<PartEnum>)
++ void setBedTools(List<ToolEnum>)
++ void showBedDetails()
++ boolean checkBedPartsAndTools()
+}
+
+
+adapterPattern.robotBuilder.table.Table <|.. adapterPattern.robotBuilder.BedToTableAdapterBuilder
+adapterPattern.robotBuilder.bed.Bed <|.. adapterPattern.robotBuilder.BedBuilder
+@enduml

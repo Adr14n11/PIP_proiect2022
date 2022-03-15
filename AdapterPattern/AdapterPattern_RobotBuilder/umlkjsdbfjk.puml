@@ -1,0 +1,55 @@
+@startuml
+class adapterPattern.robotBuilder.RobotBuilder {
++ {static} void main(String[])
+}
+class adapterPattern.robotBuilder.BedToTableAdapterBuilder {
+- String TableCollectionName
+- String TableColor
+- List<String> TableParts
+- List<String> TableTools
+- Bed bed
++ String getTableCollectionName()
++ String getTableColor()
++ List<String> getTableParts()
++ List<String> getTableTools()
++ void setTableCollectionName(String)
++ void setTableColor(String)
++ void setTableParts(List<String>)
++ void setTableTools(List<String>)
++ void showTableDetails()
++ boolean checkTablePartsAndTools(List<String>,List<String>)
+- void setProp()
+}
+class adapterPattern.robotBuilder.BedBuilder {
+- String BedCollectionName
+- String BedColor
+- List<String> BedParts
+- List<String> BedTools
++ String getBedCollectionName()
++ String getBedColor()
++ List<String> getBedParts()
++ List<String> getBedTools()
++ void setBedCollectionName(String)
++ void setBedColor(String)
++ void setBedParts(List<String>)
++ void setBedTools(List<String>)
++ void showBedDetails()
++ boolean checkBedPartsAndTools()
+}
+interface adapterPattern.robotBuilder.bed.Bed {
++ String getBedCollectionName()
++ String getBedColor()
++ List<String> getBedParts()
++ List<String> getBedTools()
++ void setBedCollectionName(String)
++ void setBedColor(String)
++ void setBedParts(java.util.List<String>)
++ void setBedTools(List<String>)
++ void showBedDetails()
++ boolean checkBedPartsAndTools()
+}
+
+
+adapterPattern.robotBuilder.table.Table <|.. adapterPattern.robotBuilder.BedToTableAdapterBuilder
+adapterPattern.robotBuilder.bed.Bed <|.. adapterPattern.robotBuilder.BedBuilder
+@enduml
