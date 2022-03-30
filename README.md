@@ -1,5 +1,5 @@
 # PIP_proiect2022
-# Echipa formata din: 
+# Echipă formată din: 
 * Iordăchescu Adrian
 * Botezatu Ioana-Flavia
 * Păduraru Ștefania
