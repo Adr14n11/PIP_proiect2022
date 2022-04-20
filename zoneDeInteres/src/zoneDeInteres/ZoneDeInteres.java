@@ -15,7 +15,6 @@ public class ZoneDeInteres {
 	
 	// functie de afisare:
 	void afisare(){
-	
 		System.out.println("Locatie: " + locatie + ", Latitudine: "+ latitudine +", Longitudine: "+ longitudine);
 	}
 }
