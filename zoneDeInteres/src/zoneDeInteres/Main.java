@@ -2,9 +2,36 @@ package zoneDeInteres;
 
  //importam libraria pentru vectori:
 import java.util.Vector;
+import java.lang.Math;
 
 public class Main {
 
+	static void calculDistanta(ZoneDeInteres x, ZoneDeInteres y){
+		//a = sin(deltafi/2)^2 + cos fi1 * cos fi2 * sin^2*(deltalambda/2)
+		// fi = latitudine, lambda = longitudine
+		//c = 2*atan(radical(a), radical(1-a))
+		//R = 
+		final double fi1 = x.latitudine * Math.PI/180;
+		final double fi2 = y.latitudine * Math.PI/180;
+		final double lambda1 = x.longitudine * Math.PI/180;
+		final double lambda2 = y.longitudine * Math.PI/180;
+		double deltafi;
+		double deltalambda; 
+		double a,c,d;//d- distanta dintre cele doua zone de interes
+		final double R=6371000;
+		
+		if(fi1>fi2) deltafi = fi1-fi2;
+		else deltafi = fi2-fi1;
+		
+		if(lambda1>lambda2) deltalambda = lambda1-lambda2;
+		else deltalambda = lambda2 - lambda1;
+		
+		a = Math.sin(deltafi/2)*Math.sin(deltafi/2) + Math.cos(fi1)*Math.cos(fi2)*Math.sin(deltalambda/2)*Math.sin(deltalambda/2);
+		c=2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+		d= R*c;
+		
+		System.out.println("distanta: " + d); //metrii
+	}
 	public static void main(String[] args) {
 		Vector<ZoneDeInteres> v = new Vector<ZoneDeInteres>();	// am creat un vector ce va primi elemente de tip ZoneDeInteres
 		
@@ -26,6 +53,9 @@ public class Main {
 		piataMihEmin.afisare();
 		palas.afisare();
 		uaic.afisare();
+		
+		calculDistanta(piataUnirii, piataMihEmin);
+		calculDistanta(palas,uaic);
 	}
 
 }
