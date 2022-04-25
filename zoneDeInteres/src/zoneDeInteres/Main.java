@@ -7,10 +7,6 @@ import java.lang.Math;
 public class Main {
 
 	static void calculDistanta(ZoneDeInteres x, ZoneDeInteres y){
-		//a = sin(deltafi/2)^2 + cos fi1 * cos fi2 * sin^2*(deltalambda/2)
-		// fi = latitudine, lambda = longitudine
-		//c = 2*atan(radical(a), radical(1-a))
-		//R = 
 		final double fi1 = x.latitudine * Math.PI/180;
 		final double fi2 = y.latitudine * Math.PI/180;
 		final double lambda1 = x.longitudine * Math.PI/180;
@@ -55,7 +51,7 @@ public class Main {
 		uaic.afisare();
 		
 		calculDistanta(piataUnirii, piataMihEmin);
-		calculDistanta(palas,uaic);
+		calculDistanta(palas, uaic);
 	}
 
 }
