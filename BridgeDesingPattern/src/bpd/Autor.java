@@ -11,5 +11,8 @@ public class Autor implements Caracteristica{
 		System.out.println("Autorul ales este: ");
 		}
 	
+	public String numeAutor(){
+		return "Jane Austen";
+	}
 	}		
 
