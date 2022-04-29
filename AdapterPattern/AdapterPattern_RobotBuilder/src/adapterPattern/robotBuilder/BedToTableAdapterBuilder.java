@@ -8,11 +8,11 @@ import adapterPattern.robotBuilder.enums.PartEnum;
 import adapterPattern.robotBuilder.enums.ToolEnum;
 import adapterPattern.robotBuilder.table.Table;
 
-//it fulfills the builder's requirement in order to assemble a table
-//and also makes less change in the current code
-
-//the adapter wraps a Bed object (the type it supposes to be adapted).
-
+/**
+ *It fulfills the builder's requirement in order to assemble a table
+ *and also makes less change in the current code
+ *the adapter wraps a Bed object (the type it supposes to be adapted).
+ */
 public class BedToTableAdapterBuilder implements Table {
 
 	private String TableCollectionName;
@@ -22,51 +22,93 @@ public class BedToTableAdapterBuilder implements Table {
 	
 	private final Bed bed;
 	
-	public BedToTableAdapterBuilder(Bed bed) { //passing the Bed object in its constructor, and assigned it to the Table interface
+	/**
+	 * 
+	 * @param bed a Bed object passed to the constructor and it supposes to be adapted
+	 */
+	public BedToTableAdapterBuilder(Bed bed) { 
 		this.bed = bed;
-		setProp(); //is used to set the Bed properties into the Table's object
+		/**
+		 * @see #setProp()
+		 * is used to set the Bed properties into the Table's object*/
+		setProp(); 
 	}
 	
+	/**
+	 * @return the collection name of the table 
+	 */
 	@Override
 	public String getTableCollectionName() {
 		return TableCollectionName;
 	}
 
+	/**
+	 * @return the color of the table 
+	 */
 	@Override
 	public String getTableColor() {
 		return TableColor;
 	}
 
+	/**
+	 * @return the parts needed for the table
+	 */
 	@Override
 	public List<PartEnum> getTableParts() {
 		return TableParts;
 	}
 
+	/**
+	 * @return the tools needed for the table
+	 */
 	@Override
 	public List<ToolEnum> getTableTools() {
 		return TableTools;
 	}
 
+	/**
+	* Sets the Table Collection Name.
+	*
+	* @param TableCollectionName the collection name of the table
+	*/
 	@Override
 	public void setTableCollectionName(String TableCollectionName) {
 		this.TableCollectionName = TableCollectionName;	
 	}
 
+	/**
+	* Sets the Table Color.
+	*
+	* @param TableColor the color of the table
+	*/
 	@Override
 	public void setTableColor(String TableColor) {
 		this.TableColor = TableColor;
 	}
 
+	/**
+	* Sets the Table Parts.
+	*
+	* @param TableParts the parts of the table
+	*/
 	@Override
 	public void setTableParts(List<PartEnum> TableParts) {
 		this.TableParts = TableParts;
 	}
 
+	/**
+	* Sets the Table Tools.
+	*
+	* @param TableTools the tools of the table
+	*/
 	@Override
 	public void setTableTools(List<ToolEnum> TableTools) {
 		this.TableTools = TableTools;
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public void showTableDetails() {
 		System.out.println("\tBuilded Table: \n"+" Collection Name: "+TableCollectionName+"\n Color: "+TableColor+"\n Parts: "+TableParts+"\n Tools: "+TableTools);
@@ -79,7 +121,7 @@ public class BedToTableAdapterBuilder implements Table {
 		return false;
 	}
 	
-	private void setProp(){ //reusing the existing code and adding properties
+	private void setProp(){ /**reusing the existing code and adding properties*/
 		
 		List<PartEnum> newPartList = new ArrayList<PartEnum>();
 		newPartList.add(PartEnum.TableTop);

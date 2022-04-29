@@ -6,8 +6,7 @@ import adapterPattern.robotBuilder.bed.Bed;
 import adapterPattern.robotBuilder.enums.PartEnum;
 import adapterPattern.robotBuilder.enums.ToolEnum;
 
-//The following class defines the implementation to the Bed interface
-
+/**The following class defines the implementation to the Bed interface*/
 public class BedBuilder implements Bed{
 	
 	private String BedCollectionName;
