@@ -1,6 +1,9 @@
 package adapterPattern.robotBuilder.enums;
 
-//Tools we have
+/**
+ * This are the tools we have
+ *
+ */
 
 public enum ToolEnum {
 

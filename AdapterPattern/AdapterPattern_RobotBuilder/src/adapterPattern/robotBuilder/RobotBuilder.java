@@ -10,8 +10,15 @@ import adapterPattern.robotBuilder.enums.PartEnum;
 import adapterPattern.robotBuilder.enums.ToolEnum;
 import adapterPattern.robotBuilder.table.Table;
 
+/**
+ * This is the class that creates the bed parts and tools and builds the bed. After that it checks if the bed build was successfully.
+ * Then using the bed configuration for building the table. Also after that it checks the build.
+ */
 public class RobotBuilder {
 
+	/** 
+	 * The main class.
+	 */
 	public static void main(String[] args) {
 		
 		List<PartEnum> bedListParts = new ArrayList<PartEnum>();
@@ -28,7 +35,6 @@ public class RobotBuilder {
 		bedListTools.add(ToolEnum.ImbusKey);
 		bedListTools.add(ToolEnum.ScrewsPackOf7);
 
-			
 		Bed bed = new BedBuilder();
 		bed.setBedCollectionName("Ikea");
 		bed.setBedColor("Black");

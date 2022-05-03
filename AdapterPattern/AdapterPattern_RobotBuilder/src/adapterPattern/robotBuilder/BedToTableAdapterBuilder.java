@@ -22,19 +22,16 @@ public class BedToTableAdapterBuilder implements Table {
 	
 	private final Bed bed;
 	
-	/**
-	 * 
-	 * @param bed a Bed object passed to the constructor and it supposes to be adapted
+	/** 
+	 * @param bed A Bed object passed to the constructor and it supposes to be adapted.
 	 */
 	public BedToTableAdapterBuilder(Bed bed) { 
 		this.bed = bed;
-		/**
-		 * @see #setProp()
-		 * is used to set the Bed properties into the Table's object*/
 		setProp(); 
 	}
 	
 	/**
+	 * Gets the table collection name.
 	 * @return the collection name of the table 
 	 */
 	@Override
@@ -43,6 +40,7 @@ public class BedToTableAdapterBuilder implements Table {
 	}
 
 	/**
+	 * Gets the table color.
 	 * @return the color of the table 
 	 */
 	@Override
@@ -51,6 +49,7 @@ public class BedToTableAdapterBuilder implements Table {
 	}
 
 	/**
+	 * Gets the table parts.
 	 * @return the parts needed for the table
 	 */
 	@Override
@@ -59,6 +58,7 @@ public class BedToTableAdapterBuilder implements Table {
 	}
 
 	/**
+	 * Gets the table tools.
 	 * @return the tools needed for the table
 	 */
 	@Override
@@ -67,9 +67,9 @@ public class BedToTableAdapterBuilder implements Table {
 	}
 
 	/**
-	* Sets the Table Collection Name.
+	* Sets the table collection name.
 	*
-	* @param TableCollectionName the collection name of the table
+	* @param TableCollectionName The collection name of the table.
 	*/
 	@Override
 	public void setTableCollectionName(String TableCollectionName) {
@@ -77,9 +77,9 @@ public class BedToTableAdapterBuilder implements Table {
 	}
 
 	/**
-	* Sets the Table Color.
+	* Sets the table color.
 	*
-	* @param TableColor the color of the table
+	* @param TableColor The color of the table.
 	*/
 	@Override
 	public void setTableColor(String TableColor) {
@@ -87,9 +87,9 @@ public class BedToTableAdapterBuilder implements Table {
 	}
 
 	/**
-	* Sets the Table Parts.
+	* Sets the table parts.
 	*
-	* @param TableParts the parts of the table
+	* @param TableParts The parts of the table.
 	*/
 	@Override
 	public void setTableParts(List<PartEnum> TableParts) {
@@ -97,9 +97,9 @@ public class BedToTableAdapterBuilder implements Table {
 	}
 
 	/**
-	* Sets the Table Tools.
+	* Sets the table tools.
 	*
-	* @param TableTools the tools of the table
+	* @param TableTools The tools of the table.
 	*/
 	@Override
 	public void setTableTools(List<ToolEnum> TableTools) {
@@ -107,13 +107,16 @@ public class BedToTableAdapterBuilder implements Table {
 	}
 
 	/**
-	 * 
+	 * Shows the table details and what's needed for the build.
 	 */
 	@Override
 	public void showTableDetails() {
 		System.out.println("\tBuilded Table: \n"+" Collection Name: "+TableCollectionName+"\n Color: "+TableColor+"\n Parts: "+TableParts+"\n Tools: "+TableTools);
 	}
 
+	/**
+	 * Checks if the table has the required parts and tools for the build.
+	 */
 	@Override
 	public boolean checkTablePartsAndTools(List<PartEnum> TableParts, List<ToolEnum> TableTools) {
 		if(TableParts.size() == 5 && TableTools.size() == 4)
@@ -121,7 +124,11 @@ public class BedToTableAdapterBuilder implements Table {
 		return false;
 	}
 	
-	private void setProp(){ /**reusing the existing code and adding properties*/
+	/**
+	 * Reusing the existing code and adding properties.
+	 * Is used to set the Bed properties into the Table's object.
+	 */
+	private void setProp(){ 
 		
 		List<PartEnum> newPartList = new ArrayList<PartEnum>();
 		newPartList.add(PartEnum.TableTop);

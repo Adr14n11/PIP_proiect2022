@@ -1,6 +1,9 @@
 package adapterPattern.robotBuilder.enums;
 
-//Parts we have
+/**
+ * This are the parts we have
+ *
+ */
 
 public enum PartEnum {
 
