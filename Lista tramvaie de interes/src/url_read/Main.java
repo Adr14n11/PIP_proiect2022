@@ -1,4 +1,6 @@
 package url_read;
+
+import java.util.Vector;
 import java.io.IOException;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -7,6 +9,21 @@ public class Main {
     
         
     public static void main(String[] args) throws IOException {
+    	
+    	Vector<ZoneDeInteres> vZone = new Vector<ZoneDeInteres>();	// am creat un vector ce va primi elemente de tip ZoneDeInteres
+    	Vector<TramvaieDeInteres> vTramvaie = new Vector<TramvaieDeInteres>();	// am creat un vector ce va primi elemente de tip TramvaieDeInteres
+		    	
+    	//am creat cateva zone de interes
+    	ZoneDeInteres piataUnirii =  new ZoneDeInteres("Piata Unirii", 47.1656266707948 , 27.5808940217326); //zona1
+    	ZoneDeInteres piataMihEmin = new ZoneDeInteres("Piata Mihai Eminescu", 47.1688202139377, 27.576766289313785);		//zona2
+    	ZoneDeInteres palas = new ZoneDeInteres("Palas Mall", 47.1552297978438, 27.5875265897513);		//zona3
+    	ZoneDeInteres uaic = new ZoneDeInteres("Universitatea Alexandru Ioan Cuza", 47.1747724305297, 27.5724000042106);		//zona4
+    	
+    	//dupa crearea elementelor le adaugam in vector:
+    	vZone.add(piataUnirii);
+    	vZone.add(piataMihEmin);
+    	vZone.add(palas);
+    	vZone.add(uaic); 
     	
     	int counter =0;
         String url = "https://gps.sctpiasi.ro/json"; //URL-ul nostru
@@ -49,8 +66,12 @@ public class Main {
 
         for(int i=0;i<counter;i++){      	        	
         	TramvaieDeInteres tramvai = new TramvaieDeInteres( ID[i], latitudini[i], longitudini[i] );
-        	tramvai.afisare();
-        }		        
+        	vTramvaie.add(tramvai);
+        	tramvai.afisare();       	
+        }	
+        
+        //testare functie TramvaieApropiateDeZona:        
+        TramvaieDeInteres.TramvaieApropiateDeZona(uaic,vTramvaie);
     }
 
 	
