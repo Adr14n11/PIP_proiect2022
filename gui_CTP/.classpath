@@ -6,5 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/stefa/OneDrive/Desktop/An3 Sem2/pip/PIP_proiect2022/gui_CTP/json-20220320.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
