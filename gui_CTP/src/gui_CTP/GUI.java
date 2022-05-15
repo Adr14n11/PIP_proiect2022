@@ -22,6 +22,10 @@ import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.SwingConstants;
+import java.awt.Insets;
+import java.awt.event.KeyEvent;
+import java.awt.Scrollbar;
 
 
 public class GUI extends ClasaSeparata{
@@ -65,21 +69,30 @@ public class GUI extends ClasaSeparata{
 		
 		JTextArea txtrAlegeZonaPreferata = new JTextArea();
 		txtrAlegeZonaPreferata.setForeground(Color.WHITE);
-		txtrAlegeZonaPreferata.setFont(new Font("SansSerif", Font.PLAIN, 20));
+		txtrAlegeZonaPreferata.setFont(new Font("SansSerif", Font.PLAIN, 22));
 		txtrAlegeZonaPreferata.setEditable(false);
 		txtrAlegeZonaPreferata.setBackground(new Color(0, 165, 80));
 		txtrAlegeZonaPreferata.setText("Alege zona cea mai apropiata de locatia ta!");
 //RadioButtons		
 		JRadioButton rdbtn1 = new JRadioButton("Piata Unirii");
-		rdbtn1.setFont(new Font("SansSerif", Font.PLAIN, 10));
+		rdbtn1.setForeground(Color.WHITE);
+		rdbtn1.setFont(new Font("SansSerif", Font.PLAIN, 12));
+		rdbtn1.setBackground(new Color(0, 128, 0));
+		
 		JRadioButton rdbtn2 = new JRadioButton("Piata Mihai Eminescu");
-		rdbtn2.setFont(new Font("SansSerif", Font.PLAIN, 10));
+		rdbtn2.setBackground(new Color(0, 128, 0));
+		rdbtn2.setForeground(Color.WHITE);
+		rdbtn2.setFont(new Font("SansSerif", Font.PLAIN, 12));
 		
 		JRadioButton rdbtn3 = new JRadioButton("Palas Mall");
-		rdbtn3.setFont(new Font("SansSerif", Font.PLAIN, 10));
+		rdbtn3.setBackground(new Color(0, 128, 0));
+		rdbtn3.setForeground(Color.WHITE);
+		rdbtn3.setFont(new Font("SansSerif", Font.PLAIN, 12));
 		
 		JRadioButton rdbtn4 = new JRadioButton("Universitate");
-		rdbtn4.setFont(new Font("SansSerif", Font.PLAIN, 10));
+		rdbtn4.setBackground(new Color(0, 128, 0));
+		rdbtn4.setForeground(Color.WHITE);
+		rdbtn4.setFont(new Font("SansSerif", Font.PLAIN, 12));
 		
 //ButtonGroup
 		ButtonGroup group = new ButtonGroup();
@@ -90,6 +103,7 @@ public class GUI extends ClasaSeparata{
 
 //JTextArea
 		JTextArea textArea = new JTextArea();
+		textArea.setBackground(new Color(245, 245, 220));
 		textArea.setForeground(Color.BLACK);
 		//textArea.setEnabled(false);
 		textArea.setEditable(false);
@@ -98,25 +112,30 @@ public class GUI extends ClasaSeparata{
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(158)
-					.addComponent(txtrAlegeZonaPreferata, GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
-					.addGap(94))
-				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(49)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(textArea, Alignment.LEADING)
-						.addComponent(rdbtn4, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(rdbtn3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(rdbtn1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(rdbtn2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
-					.addGap(476))
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(rdbtn1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+								.addComponent(rdbtn2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+								.addComponent(rdbtn3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
+							.addGap(406))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(rdbtn4, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(textArea, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
+							.addContainerGap())))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(115)
+					.addComponent(txtrAlegeZonaPreferata, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(115, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(50)
+					.addGap(41)
 					.addComponent(txtrAlegeZonaPreferata, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(24)
+					.addGap(33)
 					.addComponent(rdbtn1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(rdbtn2)
@@ -125,8 +144,8 @@ public class GUI extends ClasaSeparata{
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(rdbtn4)
 					.addGap(33)
-					.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-					.addGap(36))
+					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(29, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
 		
