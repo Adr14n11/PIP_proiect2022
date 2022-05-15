@@ -49,14 +49,14 @@ public class ZoneDeInteres {
 	}
 	
 	//functie care determina daca un tramvai se aproprie sau nu de o zona de interes:
-	public static void seApropieTramvaiDeZona(ZoneDeInteres zona, TramvaieDeInteres tramvai_t1, TramvaieDeInteres tramvai_t2){
+	public static String seApropieTramvaiDeZona(ZoneDeInteres zona, TramvaieDeInteres tramvai_t1, TramvaieDeInteres tramvai_t2){
 		double distanta_t1 = Distanta(zona,tramvai_t1);
 		double distanta_t2 = Distanta(zona,tramvai_t2);
 				
 		if(distanta_t1 > distanta_t2)
-			System.out.println("Tramvaiul se aproprie de zona de interes");
+			return "Tramvaiul se aproprie de zona de interes";
 		else 
-			System.out.println("Tramvaiul se indeparteaza de zona de interes");
+			return "Tramvaiul se indeparteaza de zona de interes";
 	}
 
 }

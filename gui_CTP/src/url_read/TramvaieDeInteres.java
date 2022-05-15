@@ -6,7 +6,8 @@ import java.util.Vector;
 public class TramvaieDeInteres  {
 	//in TramvaieDeInteres stocam datele legate de numele locatiei, latitudinea locatiei si longitudinea locatiei 
 	public int vehicleName;						
-	double latitudine, longitudine;
+	public double latitudine;
+	public double longitudine;
 
 	//am creat un constructor care va atribui campurilor valorile transmise prin argumente
      public TramvaieDeInteres(int vehicleName, double latitudine, double longitudine){
