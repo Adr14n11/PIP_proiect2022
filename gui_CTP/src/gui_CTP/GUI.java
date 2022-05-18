@@ -2,8 +2,11 @@ package gui_CTP;
 
 import java.awt.EventQueue;
 
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 import java.awt.Color;
 import javax.swing.JTextField;
 
@@ -17,21 +20,27 @@ import java.awt.Font;
 import javax.swing.JTextArea;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 import java.awt.Insets;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.awt.Scrollbar;
 import javax.swing.JPanel;
+import javax.swing.JButton;
 
 
 public class GUI extends ClasaSeparata{
 
 	private JFrame frame;
+	private static com.teamdev.jxmaps.Map map;
+	
 	/**
 	 * Launch the application.
 	 * @throws IOException 
@@ -53,16 +62,18 @@ public class GUI extends ClasaSeparata{
 
 	/**
 	 * Create the application.
+	 * @throws IOException 
 	 */
 
-	public GUI() {
+	public GUI() throws IOException {
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @throws IOException 
 	 */
-	private void initialize() {
+	private void initialize() throws IOException {
 		frame = new JFrame("Tramvaie PESA - IASI");
 		frame.getContentPane().setBackground(new Color(0, 165, 80));
 		frame.setBounds(100, 100, 675, 491);
@@ -110,6 +121,14 @@ public class GUI extends ClasaSeparata{
 		textArea.setEditable(false);
 		
 		JPanel panel = new JPanel();
+		BufferedImage img = ImageIO.read(new File("png-clipart-tram-transport-car-tram-mode-of-transport-public-transport-thumbnail.png"));
+		JLabel pic = new JLabel(new ImageIcon(img));
+		panel.add(pic);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(20, 30, 20, 20);
+		
+		
 		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
@@ -119,25 +138,31 @@ public class GUI extends ClasaSeparata{
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(49)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(rdbtn1, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-								.addComponent(rdbtn2, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-								.addComponent(rdbtn3, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-								.addComponent(rdbtn4, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-								.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
+								.addComponent(rdbtn1, GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+								.addComponent(rdbtn2, GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+								.addComponent(rdbtn3, GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+								.addComponent(rdbtn4, GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+								.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE))
 							.addGap(28)
-							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
 							.addGap(14))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(115)
 							.addComponent(txtrAlegeZonaPreferata, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 					.addGap(0))
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addContainerGap(321, Short.MAX_VALUE)
+					.addComponent(btnNewButton)
+					.addGap(255))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(41)
 					.addComponent(txtrAlegeZonaPreferata, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(33)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnNewButton)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(rdbtn1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
@@ -151,7 +176,7 @@ public class GUI extends ClasaSeparata{
 							.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
 							.addGap(26))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
 							.addContainerGap())))
 		);
 		frame.getContentPane().setLayout(groupLayout);

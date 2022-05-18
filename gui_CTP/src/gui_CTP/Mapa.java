@@ -47,19 +47,12 @@ public class Mapa extends MapView{
 	public Marker generateMarker(LatLng pos)
 	{
 		Marker marker=null;
-	
-	
-				
-			 marker = new Marker(map);
-			marker.setPosition(pos);
-			map.setCenter(pos);
-			
-		
-			
-	
+		marker = new Marker(map);
+		marker.setPosition(pos);
+		map.setCenter(pos);
+
 		System.out.println("Marker");
 		return marker;
-		
 		
 	}
 
@@ -181,7 +174,7 @@ public class Mapa extends MapView{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 Mapa example = new Mapa("test");
+		Mapa example = new Mapa("test");
 		example.generateMarker(map.getCenter());
 		
 	
