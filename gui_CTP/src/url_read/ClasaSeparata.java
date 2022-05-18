@@ -129,9 +129,9 @@ public class ClasaSeparata {
         
         //testare daca tramvaiul cel mai apropiat de zona se insdeparteaza sau se apropie
         System.out.println("\n");
-        System.out.println(ZoneDeInteres.seApropieTramvaiDeZona(uaic, tramvai_t1,tramvaie_t2_ordonate.elementAt(0)));
+        //System.out.println(ZoneDeInteres.seApropieTramvaiDeZona(uaic, tramvai_t1,tramvaie_t2_ordonate.elementAt(0)));
         System.out.println("\n\t");
-        return "Universitate: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n";
+        return "Universitate: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(uaic, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
         //System.out.println("\n\t");
 	}
 
@@ -250,9 +250,9 @@ public class ClasaSeparata {
 	    
 	    //testare daca tramvaiul cel mai apropiat de zona se insdeparteaza sau se apropie
 	    System.out.println("\n");
-	    System.out.println(ZoneDeInteres.seApropieTramvaiDeZona(palas, tramvai_t1,tramvaie_t2_ordonate.elementAt(0)));
+	    //System.out.println(ZoneDeInteres.seApropieTramvaiDeZona(palas, tramvai_t1,tramvaie_t2_ordonate.elementAt(0)));
 	    System.out.println("\n\t");
-	    return "Palas Mall: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n";
+	    return "Palas Mall: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n"+ZoneDeInteres.seApropieTramvaiDeZona(palas, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
 	    //System.out.println("\n\t");
 }
 	
@@ -370,9 +370,9 @@ public class ClasaSeparata {
 	    
 	    //testare daca tramvaiul cel mai apropiat de zona se insdeparteaza sau se apropie
 	    System.out.println("\n");
-	    System.out.println(ZoneDeInteres.seApropieTramvaiDeZona(piataMihEmin, tramvai_t1,tramvaie_t2_ordonate.elementAt(0)));
+	    //System.out.println(ZoneDeInteres.seApropieTramvaiDeZona(piataMihEmin, tramvai_t1,tramvaie_t2_ordonate.elementAt(0)));
 	    System.out.println("\n\t");
-	    return "Piata Mihai Eminescu: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n";
+	    return "Piata Mihai Eminescu: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(piataMihEmin, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
 	    //System.out.println("\n\t");
 }
 	
@@ -490,9 +490,9 @@ public class ClasaSeparata {
 	    
 	    //testare daca tramvaiul cel mai apropiat de zona se insdeparteaza sau se apropie
 	    System.out.println("\n");
-	    System.out.println(ZoneDeInteres.seApropieTramvaiDeZona(piataUnirii, tramvai_t1,tramvaie_t2_ordonate.elementAt(0)));
+	    //System.out.println(ZoneDeInteres.seApropieTramvaiDeZona(piataUnirii, tramvai_t1,tramvaie_t2_ordonate.elementAt(0)));
 	    System.out.println("\n\t");
-	    return "Piata Unirii: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n";
+	    return "Piata Unirii: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(piataUnirii, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
 	    //System.out.println("\n\t");
 	}
 }

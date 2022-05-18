@@ -26,6 +26,7 @@ import javax.swing.SwingConstants;
 import java.awt.Insets;
 import java.awt.event.KeyEvent;
 import java.awt.Scrollbar;
+import javax.swing.JPanel;
 
 
 public class GUI extends ClasaSeparata{
@@ -108,27 +109,28 @@ public class GUI extends ClasaSeparata{
 		//textArea.setEnabled(false);
 		textArea.setEditable(false);
 		
+		JPanel panel = new JPanel();
+		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(49)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(rdbtn1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-								.addComponent(rdbtn2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-								.addComponent(rdbtn3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
-							.addGap(406))
+							.addGap(49)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(rdbtn1, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+								.addComponent(rdbtn2, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+								.addComponent(rdbtn3, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+								.addComponent(rdbtn4, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+								.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
+							.addGap(28)
+							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+							.addGap(14))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-								.addComponent(rdbtn4, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(textArea, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
-							.addContainerGap())))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(115)
-					.addComponent(txtrAlegeZonaPreferata, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(115, Short.MAX_VALUE))
+							.addGap(115)
+							.addComponent(txtrAlegeZonaPreferata, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+					.addGap(0))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -136,22 +138,28 @@ public class GUI extends ClasaSeparata{
 					.addGap(41)
 					.addComponent(txtrAlegeZonaPreferata, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addGap(33)
-					.addComponent(rdbtn1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(rdbtn2)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(rdbtn3)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(rdbtn4)
-					.addGap(33)
-					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(29, Short.MAX_VALUE))
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(rdbtn1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(rdbtn2)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(rdbtn3)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(rdbtn4)
+							.addGap(33)
+							.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+							.addGap(26))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+							.addContainerGap())))
 		);
 		frame.getContentPane().setLayout(groupLayout);
 		
 //ActionListener general
 		ActionListener a1 = new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
+				textArea.setText(null);
 				if(arg0.getSource()==rdbtn1) {
 					try {
 						textArea.append(clasaSeparataPiataUnirii());
