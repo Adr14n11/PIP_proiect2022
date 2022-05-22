@@ -26,6 +26,7 @@ public class TramvaieDeInteres  {
 
 		System.out.println("Vehicle name: " + vehicleName + ", Latitudine: "+ latitudine +", Longitudine: "+ longitudine);
 	}
+	
 	/** Funtion displays a TramvaieDeInteres object's components w/ parameters
 	 * 
 	 * @param tramvaie Tram to dislay
