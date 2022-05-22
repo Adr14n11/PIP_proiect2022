@@ -53,8 +53,13 @@ public class TramvaieDeInteresTest {
 		listaTramvaie.add(tramvai2); 
 		listaTramvaie.add(tramvai3); 
 		
-		TramvaieDeInteres.afisare_lista_tramvaie(listaTramvaie);
+		String newLine = System.lineSeparator();
 		
+		String afisareAsteptata = "Vehicle name: "+ tramvai1.vehicleName+ ", Latitudine: "+ tramvai1.latitudine+", Longitudine: "+ tramvai1.longitudine+ newLine +"Vehicle name: "+ tramvai2.vehicleName+ ", Latitudine: "+ tramvai2.latitudine+", Longitudine: "+ tramvai2.longitudine+ newLine +"Vehicle name: "+ tramvai3.vehicleName+ ", Latitudine: "+ tramvai3.latitudine+", Longitudine: "+ tramvai3.longitudine;
+		
+		TramvaieDeInteres.afisare_lista_tramvaie(listaTramvaie);
+
+		assertEquals(afisareAsteptata, outContent.toString().trim() );
 		
 	}
 
@@ -63,9 +68,9 @@ public class TramvaieDeInteresTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
+	/*@Test
 	public void testConvertire_vehicleName() {
 		fail("Not yet implemented");
-	}
+	}*/
 
 }
