@@ -50,7 +50,9 @@ public class GUI extends ClasaSeparata{
 				}
 			}
 		});
-		
+		ProgressBar pb = new ProgressBar();  
+	    pb.setVisible(true);  
+	    pb.loop();
 	}
 
 
@@ -246,15 +248,6 @@ public class GUI extends ClasaSeparata{
 				//panel.setVisible(true);
 				if(arg0.getSource()==rdbtn1) {
 					try {
-						ProgressBar pb;
-						pb = new ProgressBar();
-						pb.setVisible(true);  
-					    pb.loop();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					} 
-					try {
 						BufferedImage img = ImageIO.read(new File("ZonaPiataUnirii.jpg"));
 						JLabel pic = new JLabel(new ImageIcon(img));
 						panel.add(pic);
@@ -284,15 +277,6 @@ public class GUI extends ClasaSeparata{
 						e1.printStackTrace();
 					}
 					try {
-						ProgressBar pb;
-						pb = new ProgressBar();
-						pb.setVisible(true);  
-					    pb.loop();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					} 
-					try {
 						textArea.append(clasaSeparataPiataMEminescu());
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
@@ -313,15 +297,6 @@ public class GUI extends ClasaSeparata{
 						e1.printStackTrace();
 					}
 					try {
-						ProgressBar pb;
-						pb = new ProgressBar();
-						pb.setVisible(true);  
-					    pb.loop();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					} 
-					try {
 						textArea.append(clasaSeparataPalas());
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
@@ -331,6 +306,7 @@ public class GUI extends ClasaSeparata{
 						e.printStackTrace();
 					}
 				}
+				
 				if(arg0.getSource()==rdbtn4) {
 					try {
 						BufferedImage img4 = ImageIO.read(new File("UnivCuza.jpg"));
@@ -340,15 +316,6 @@ public class GUI extends ClasaSeparata{
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					try {
-						ProgressBar pb;
-						pb = new ProgressBar();
-						pb.setVisible(true);  
-					    pb.loop();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					} 
 					try {
 						textArea.append(clasaSeparataUAIC());
 					} catch (IOException e) {

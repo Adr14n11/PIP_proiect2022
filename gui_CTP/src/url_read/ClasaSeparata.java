@@ -6,7 +6,9 @@ import java.util.Vector;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class ClasaSeparata {
+import gui_CTP.ProgressBar;
+
+public class ClasaSeparata{
 	static Vector<ZoneDeInteres> vZone = new Vector<ZoneDeInteres>();	//vector cu elemente de tip ZoneDeInteres
 	static Vector<TramvaieDeInteres> vTramvaie_t1 = new Vector<TramvaieDeInteres>();	//vector de tramvaie la momentul 1
 	static Vector<TramvaieDeInteres> vTramvaie_t2 = new Vector<TramvaieDeInteres>();	//vector de tramvaie la momentul 2
@@ -377,7 +379,7 @@ public class ClasaSeparata {
 }
 	
 //clasa separata cu rol de a face legatura intre zona de interes Piata Unirii si un buton de pe GUI
-	public String clasaSeparataPiataUnirii() throws IOException, InterruptedException {
+	public String clasaSeparataPiataUnirii() throws IOException, InterruptedException  {
 	
 		//adaugare zone create intr-un vector
 		vZone.add(piataUnirii);
@@ -435,7 +437,11 @@ public class ClasaSeparata {
 	    TramvaieDeInteres.afisare_lista_tramvaie(vTramvaie_t1);
 	
 	    int counter2 =0;  
-	    Thread.sleep(16500);        
+	    //Thread.sleep(16500);
+		//ProgressBar pb = new ProgressBar();
+		//pb.setVisible(true);  
+		//pb.loop();
+			
 	    String aux2 =  ReadFromWeb.readFromWeb(url); 		//Continutul url-ului 
 	    
 	    String concatenat_final_s2 = creare_lista_json_start_I_s + aux2;
@@ -494,8 +500,8 @@ public class ClasaSeparata {
 	    System.out.println("\n\t");
 	    return "Piata Unirii: "+
 	    "\nVehicle name: " + tramvai_t1.vehicleName + "\n"+
-	    ", Latitudine: "+ tramvai_t1.latitudine + "\n"+
-	    ", Longitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(piataUnirii, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
+	    "Latitudine: "+ tramvai_t1.latitudine + "\n"+
+	    "Longitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(piataUnirii, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
 	    //System.out.println("\n\t");
 	}
 }

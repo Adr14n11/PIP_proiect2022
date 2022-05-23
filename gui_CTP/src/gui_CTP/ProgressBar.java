@@ -6,9 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JProgressBar;
 
 public class ProgressBar extends JFrame{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	JProgressBar progress;
 	public ProgressBar() throws IOException {
@@ -35,19 +32,21 @@ public class ProgressBar extends JFrame{
 	      // fills the bar
 	      progress.setValue(i);  
 	      i = i + 10;  
-	      //try
-	      //{
-	       // Thread.sleep(120);
-	      //}
-	      //catch(Exception e){}
+	      try
+	      {
+	        Thread.sleep(160);
+	      }
+	      catch(Exception e){}
 	    }
 	    
 	  }
-	/*public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 		
-		ProgressBar pb = new ProgressBar();  
+		/*ProgressBar pb = new ProgressBar();  
 	    pb.setVisible(true);  
-	    pb.loop(); 
-	}*/
+	    pb.loop();
+	    */ 
+	}
+	
 
 }
