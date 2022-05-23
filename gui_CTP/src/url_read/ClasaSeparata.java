@@ -492,7 +492,10 @@ public class ClasaSeparata {
 	    System.out.println("\n");
 	    //System.out.println(ZoneDeInteres.seApropieTramvaiDeZona(piataUnirii, tramvai_t1,tramvaie_t2_ordonate.elementAt(0)));
 	    System.out.println("\n\t");
-	    return "Piata Unirii: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(piataUnirii, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
+	    return "Piata Unirii: "+
+	    "\nVehicle name: " + tramvai_t1.vehicleName + "\n"+
+	    ", Latitudine: "+ tramvai_t1.latitudine + "\n"+
+	    ", Longitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(piataUnirii, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
 	    //System.out.println("\n\t");
 	}
 }
