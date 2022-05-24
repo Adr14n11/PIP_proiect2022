@@ -1,0 +1,1 @@
+ {"vehicleName":"2203","vehicleLat":"47.151978","vehicleLong":"27.621511","vehicleDate":"2022-05-24 18:38:16"},{"vehicleName":"2203","vehicleLat":"47.151978","vehicleLong":"27.621511","vehicleDate":"2022-05-24 18:38:16"}
