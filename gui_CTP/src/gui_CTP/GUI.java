@@ -33,6 +33,7 @@ public class GUI extends ClasaSeparata{
 
 	private JFrame frame;
 	private JLabel clock;
+	public static Mapa example;
 	
 	/**
 	 * Launch the application.
@@ -44,15 +45,13 @@ public class GUI extends ClasaSeparata{
 			public void run() {
 				try {
 					GUI window = new GUI();
+					//example = new Mapa("Iasi");
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
-		ProgressBar pb = new ProgressBar();  
-	    pb.setVisible(true);  
-	    pb.loop();
 	}
 
 
@@ -69,7 +68,7 @@ public class GUI extends ClasaSeparata{
 					for(;;) {
 					Calendar cal = new GregorianCalendar();
 					int day = cal.get(Calendar.DAY_OF_MONTH);
-					int month = cal.get(Calendar.MONTH);
+					int month = cal.get(Calendar.MONTH)+1;
 					int year = cal.get(Calendar.YEAR);
 					
 					int second = cal.get(Calendar.SECOND);
@@ -105,7 +104,7 @@ public class GUI extends ClasaSeparata{
 		frame.setSize(1085, 725);
 		frame.setLocationRelativeTo(null); 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+//Text		
 		JTextArea txtrAlegeZonaPreferata = new JTextArea();
 		txtrAlegeZonaPreferata.setAutoscrolls(false);
 		txtrAlegeZonaPreferata.setForeground(Color.WHITE);
@@ -149,7 +148,6 @@ public class GUI extends ClasaSeparata{
 		textArea.setFont(new Font("Monospaced", Font.PLAIN, 20));
 		textArea.setBackground(new Color(245, 245, 245));
 		textArea.setForeground(Color.BLACK);
-		//textArea.setEnabled(false);
 		textArea.setEditable(false);
 //Panel	
 		JPanel panel = new JPanel();
@@ -158,7 +156,7 @@ public class GUI extends ClasaSeparata{
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 165, 80));
-		BufferedImage img1 = ImageIO.read(new File("New Project (2).png"));
+		BufferedImage img1 = ImageIO.read(new File(".\\Resources\\New Project (2).png"));
 		JLabel pic1 = new JLabel(new ImageIcon(img1));
 		panel_1.add(pic1);
 		
@@ -169,7 +167,7 @@ public class GUI extends ClasaSeparata{
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(0, 165, 80));
-		BufferedImage imgc = ImageIO.read(new File("clock.png"));
+		BufferedImage imgc = ImageIO.read(new File(".\\Resources\\ceas (1).png"));
 		JLabel picc = new JLabel(new ImageIcon(imgc));
 		panel_2.add(picc);
 		
@@ -199,7 +197,7 @@ public class GUI extends ClasaSeparata{
 									.addComponent(panel, GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE))
 								.addGroup(groupLayout.createSequentialGroup()
 									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+									.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.RELATED)
 									.addComponent(clock, GroupLayout.PREFERRED_SIZE, 285, GroupLayout.PREFERRED_SIZE)))))
 					.addGap(27))
@@ -227,17 +225,18 @@ public class GUI extends ClasaSeparata{
 							.addComponent(rdbtn4, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
 							.addGap(31)
 							.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-							.addGap(26))
+							.addPreferredGap(ComponentPlacement.RELATED))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 389, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
 									.addComponent(clock, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-									.addContainerGap())
+									.addPreferredGap(ComponentPlacement.RELATED))
 								.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-									.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-									.addGap(42))))))
+									.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
+									.addGap(13)))))
+					.addGap(26))
 		);
 		frame.getContentPane().setLayout(groupLayout);
 		
@@ -248,7 +247,7 @@ public class GUI extends ClasaSeparata{
 				//panel.setVisible(true);
 				if(arg0.getSource()==rdbtn1) {
 					try {
-						BufferedImage img = ImageIO.read(new File("ZonaPiataUnirii.jpg"));
+						BufferedImage img = ImageIO.read(new File(".\\Resources\\ZonaPiataUnirii.jpg"));
 						JLabel pic = new JLabel(new ImageIcon(img));
 						panel.add(pic);
 					} catch (IOException e1) {
@@ -257,7 +256,7 @@ public class GUI extends ClasaSeparata{
 					}
 					
 					try {
-						textArea.append(clasaSeparataPiataUnirii()); 
+						textArea.append(functiePiataUnirii()); 
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -269,7 +268,7 @@ public class GUI extends ClasaSeparata{
 				}
 				if(arg0.getSource()==rdbtn2) {
 					try {
-						BufferedImage img2 = ImageIO.read(new File("MihaiEminescu1.jpg"));
+						BufferedImage img2 = ImageIO.read(new File(".\\Resources\\MihaiEminescu1.jpg"));
 						JLabel pic2 = new JLabel(new ImageIcon(img2));
 						panel.add(pic2);
 					} catch (IOException e1) {
@@ -277,7 +276,7 @@ public class GUI extends ClasaSeparata{
 						e1.printStackTrace();
 					}
 					try {
-						textArea.append(clasaSeparataPiataMEminescu());
+						textArea.append(functiePiataUnirii());
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -289,7 +288,7 @@ public class GUI extends ClasaSeparata{
 				
 				if(arg0.getSource()==rdbtn3) {
 					try {
-						BufferedImage img3 = ImageIO.read(new File("palas.jpg"));
+						BufferedImage img3 = ImageIO.read(new File(".\\Resources\\palas.jpg"));
 						JLabel pic3 = new JLabel(new ImageIcon(img3));
 						panel.add(pic3);
 					} catch (IOException e1) {
@@ -297,7 +296,7 @@ public class GUI extends ClasaSeparata{
 						e1.printStackTrace();
 					}
 					try {
-						textArea.append(clasaSeparataPalas());
+						textArea.append(functiePalas());
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -309,7 +308,7 @@ public class GUI extends ClasaSeparata{
 				
 				if(arg0.getSource()==rdbtn4) {
 					try {
-						BufferedImage img4 = ImageIO.read(new File("UnivCuza.jpg"));
+						BufferedImage img4 = ImageIO.read(new File(".\\Resources\\UnivCuza.jpg"));
 						JLabel pic4 = new JLabel(new ImageIcon(img4));
 						panel.add(pic4);
 					} catch (IOException e1) {
@@ -317,7 +316,7 @@ public class GUI extends ClasaSeparata{
 						e1.printStackTrace();
 					}
 					try {
-						textArea.append(clasaSeparataUAIC());
+						textArea.append(functieUAIC());
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

@@ -1,6 +1,5 @@
 package gui_CTP;
 import java.awt.BorderLayout;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.JFrame;
@@ -12,10 +11,12 @@ import com.teamdev.jxmaps.*;
 
 public class Mapa extends MapView{
 	
+	private static final long serialVersionUID = 1L;
+
 /**
  * The map object
  */
-	private static com.teamdev.jxmaps.Map map;
+	public static com.teamdev.jxmaps.Map map;
 
 /**
  * Editable circle options 
@@ -35,10 +36,6 @@ public class Mapa extends MapView{
 		this.settingsCircle = settingsCircle;
 	}
 
-
-
-
-
 	/**
 	 * Generate a marker on the LatLongPoint
 	 * @param pos of the wanted marker
@@ -57,7 +54,7 @@ public class Mapa extends MapView{
 	}
 
 	/**
-	 * Generate a simple nibe between two LatLong points
+	 * Generate a simple line between two LatLong points
 	 * @param start Start point of the line
 	 * @param end End point of the line
 	 * @param markers Do you wanna put a marker on the LatLong points
@@ -117,8 +114,7 @@ public class Mapa extends MapView{
 	 */
 	public Mapa(String pString) {
 
-		JFrame frame = new JFrame("Chicago-Data: "+pString);
-
+		JFrame frame = new JFrame("Tramvaie-Data: "+pString);
 
 		settingsCircle=new CircleOptions();
 		settingsCircle.setFillColor("#FF0000");
@@ -146,17 +142,16 @@ public class Mapa extends MapView{
 					mapOptions.setMapTypeControlOptions(controlOptions);
 					
 					map.setOptions(mapOptions);
-					map.setCenter(new LatLng(47.1552297978438, 27.5875265897513));
-					map.setZoom(19);
-
+					map.setCenter(new LatLng(47.16424473529039, 27.585579300059024));
+					map.setZoom(15);
 				}
 			}
 		});
 		System.out.print("Map ");
 		try {
-			for(int i=0;i<10;i++)
+			for(int i=0;i<3;i++)
 			{
-				TimeUnit.SECONDS.sleep(1);
+				TimeUnit.MILLISECONDS.sleep(500);
 				System.out.print(".");
 			}
 		} catch (InterruptedException e1) {
@@ -170,17 +165,4 @@ public class Mapa extends MapView{
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
-	
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Mapa example = new Mapa("test");
-		example.generateMarker(map.getCenter());
-		
-	
-
-	}
-
-
-
 }

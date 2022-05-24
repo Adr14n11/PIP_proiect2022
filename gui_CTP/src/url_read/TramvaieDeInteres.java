@@ -1,8 +1,15 @@
+/**
+ * It contains the data of the tram vehicles that are of interest to us, and it also contains a function that sorts the
+ * tram vehicles by distance from a certain area of interest
+ */
 package url_read;
 
 import java.util.Collections;
 import java.util.Vector;
 
+/**
+ * This class is used to store the data related to the vehicle name, latitude and longitude
+ */
 public class TramvaieDeInteres  {
 	//in TramvaieDeInteres stocam datele legate de numele locatiei, latitudinea locatiei si longitudinea locatiei 
 	public int vehicleName;						
@@ -15,18 +22,32 @@ public class TramvaieDeInteres  {
 		this.latitudine = latitudine;
 		this.longitudine = longitudine;
 	}
-	
+     /**
+ 	 * The function `afisare()` prints the name of the vehicle, the latitude and the longitude
+ 	 */
 	public void afisare(){
 
 		System.out.println("Vehicle name: " + vehicleName + ", Latitudine: "+ latitudine +", Longitudine: "+ longitudine);
 	}
 	
+	/**
+	 * It prints the name of the tram, its latitude and longitude
+	 *
+	 * @param tramvaie the vector of tramvai objects
+	 */
 	public static void afisare_lista_tramvaie(Vector<TramvaieDeInteres> tramvaie){
 		for (int i = 0; i< tramvaie.size(); i++)
 			System.out.println("Vehicle name: " + tramvaie.elementAt(i).vehicleName + ", Latitudine: "+ tramvaie.elementAt(i).latitudine +", Longitudine: "+ tramvaie.elementAt(i).longitudine);
 	}
 	
 	//functie ce creaza o lista cu tramvaiele in functie de distanta fata de o zona de interes
+	/**
+	 * It sorts the tramvai vector by distance from the zone of interest
+	 *
+	 * @param zona the zone of interest
+	 * @param vTramvaieNeordonate a vector of TramvaieDeInteres objects
+	 * @return A vector of TramvaieDeInteres objects.
+	 */
 	public static Vector<TramvaieDeInteres> TramvaieApropiateDeZona(ZoneDeInteres zona, Vector<TramvaieDeInteres> vTramvaieNeordonate){
 		Vector<TramvaieDeInteres> vTramvaieOrdonate = new Vector<TramvaieDeInteres>();
 		vTramvaieOrdonate = vTramvaieNeordonate;
@@ -45,18 +66,4 @@ public class TramvaieDeInteres  {
 			}
 			return vTramvaieOrdonate;
 		}
-		 
-		 static Vector<TramvaieDeInteres> convertire_vehicleName(Vector<TramvaieDeInteres> vector_tramv){
-			 for (int i = 0; i < vector_tramv.size(); i++){
-				 if (vector_tramv.elementAt(i).vehicleName == 2201)
-					 vector_tramv.elementAt(i).vehicleName = 13;
-				 else if (vector_tramv.elementAt(i).vehicleName == 2213)
-					 vector_tramv.elementAt(i).vehicleName = 9;
-				 else if (vector_tramv.elementAt(i).vehicleName == 2204)
-					 vector_tramv.elementAt(i).vehicleName = 1;
-				 
-			 }
-			 
-			 return vector_tramv;
-		 }		
 }

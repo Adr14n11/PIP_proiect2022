@@ -15,12 +15,22 @@ public class ZoneDeInteres {
 	}
 
 	// functie de afisare:
+	/**
+	 * It prints the location, latitude and longitude of the object
+	 */
 	void afisare(){
 		System.out.println("Locatie: " + locatie + ", Latitudine: "+ latitudine +", Longitudine: "+ longitudine);
 	}
 
 
 	//functie care determina distanta dintre un tramvai si o zona de interes:
+	/**
+	 * It calculates the distance between two points on the Earth's surface, given their latitude and longitude
+	 *
+	 * @param zona the zone of interest
+	 * @param tramvai tramvaiul care trebuie sa fie verificat
+	 * @return The distance between the tram and the zone of interest.
+	 */
 	static double Distanta(ZoneDeInteres zona, TramvaieDeInteres tramvai){
 		final double fi1 = zona.latitudine * Math.PI/180;
 		final double fi2 = tramvai.latitudine * Math.PI/180;
@@ -49,12 +59,20 @@ public class ZoneDeInteres {
 	}
 	
 	//functie care determina daca un tramvai se aproprie sau nu de o zona de interes:
+	/**
+	 * The function returns a string that says if the tram is getting closer or further away from the zone of interest
+	 *
+	 * @param zona the zone of interest
+	 * @param tramvai_t1 the first tram
+	 * @param tramvai_t2 the tramvai at time t2
+	 * @return A string
+	 */
 	public static String seApropieTramvaiDeZona(ZoneDeInteres zona, TramvaieDeInteres tramvai_t1, TramvaieDeInteres tramvai_t2){
 		double distanta_t1 = Distanta(zona,tramvai_t1);
 		double distanta_t2 = Distanta(zona,tramvai_t2);
 				
-		if(distanta_t1 > distanta_t2)
-			return "Tramvaiul se aproprie de zona de interes";
+		if(distanta_t1 < distanta_t2)
+			return "Tramvaiul se apropie de zona de interes";
 		else 
 			return "Tramvaiul se indeparteaza de zona de interes";
 	}
