@@ -76,7 +76,7 @@ public class ClasaSeparata {
         TramvaieDeInteres.afisare_lista_tramvaie(vTramvaie_t1);
 
         int counter2 =0;  
-        Thread.sleep(15050);        
+        Thread.sleep(16000);        
         String aux2 =  ReadFromWeb.readFromWeb(url); 		//Continutul url-ului 
         
         String concatenat_final_s2 = creare_lista_json_start_I_s + aux2;
@@ -152,7 +152,7 @@ public class ClasaSeparata {
         
         LatLng p = new LatLng(tramvai_t1.latitudine, tramvai_t1.longitudine);
 
-        GUI.example.generateMarker(p);
+       GUI.example.generateMarker(p);
 		try{
 		GUI.example.generateSimplePath(p1, p, null);
 		}
@@ -160,7 +160,7 @@ public class ClasaSeparata {
 		}
 		
 		System.out.println("\n\t");
-        return "Universitate: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(uaic, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));      
+        return "Universitate: "+"\nVehicle name: " + tramvai_t1.vehicleName + "\nLatitudine: "+ tramvai_t1.latitudine +"\nLongitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(uaic, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));      
 	}
 
 //clasa separata cu rol de a face legatura intre zona de interes Palas si un buton de pe GUI
@@ -206,7 +206,7 @@ public class ClasaSeparata {
 		}
 		
 	    System.out.println("\n\t");
-	    return "Palas Mall: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n"+ZoneDeInteres.seApropieTramvaiDeZona(palas, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
+	    return "Palas Mall: "+"\nVehicle name: " + tramvai_t1.vehicleName + "\nLatitudine: "+ tramvai_t1.latitudine +"\nLongitudine: "+ tramvai_t1.longitudine+"\n"+ZoneDeInteres.seApropieTramvaiDeZona(palas, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
 }
 	
 //clasa separata cu rol de a face legatura intre zona de interes Piata Mihai Eminescu si un buton de pe GUI
@@ -245,7 +245,7 @@ public class ClasaSeparata {
  		}
  		
  		System.out.println("\n\t");
-	    return "Piata Mihai Eminescu: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(piataMihEmin, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
+	    return "Piata Mihai Eminescu: "+"\nVehicle name: " + tramvai_t1.vehicleName + "\nLatitudine: "+ tramvai_t1.latitudine +"\nLongitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(piataMihEmin, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
 }
 	
 //clasa separata cu rol de a face legatura intre zona de interes Piata Unirii si un buton de pe GUI
@@ -285,6 +285,6 @@ public class ClasaSeparata {
  		}
  		
  		System.out.println("\n\t");
-	    return "Piata Unirii: "+"\nVehicle name: " + tramvai_t1.vehicleName + ", Latitudine: "+ tramvai_t1.latitudine +", Longitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(piataUnirii, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
+	    return "Piata Unirii: "+"\nVehicle name: " + tramvai_t1.vehicleName + "\nLatitudine: "+ tramvai_t1.latitudine +"\nLongitudine: "+ tramvai_t1.longitudine+"\n" + ZoneDeInteres.seApropieTramvaiDeZona(piataUnirii, tramvai_t1,tramvaie_t2_ordonate.elementAt(0));
 	}
 }

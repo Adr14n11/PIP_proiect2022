@@ -72,9 +72,9 @@ public class ZoneDeInteres {
 		double distanta_t2 = Distanta(zona,tramvai_t2);
 				
 		if(distanta_t1 < distanta_t2)
-			return "Tramvaiul se apropie de zona de interes";
+			return "Tramvaiul se apropie de zona de interes!";
 		else 
-			return "Tramvaiul se indeparteaza de zona de interes";
+			return "Tramvaiul se indeparteaza de zona de interes!";
 	}
 
 }
