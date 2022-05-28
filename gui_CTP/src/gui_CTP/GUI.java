@@ -25,13 +25,9 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
 import javax.swing.LayoutStyle.ComponentPlacement;
-
-
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.MatteBorder;
 
 
 public class GUI extends ClasaSeparata{
@@ -358,10 +354,10 @@ public class GUI extends ClasaSeparata{
 					try {
 						textArea.append(functiePiataUnirii()); 
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
+					
 						e.printStackTrace();
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
+					
 						e.printStackTrace();
 					}
 				   
@@ -372,12 +368,12 @@ public class GUI extends ClasaSeparata{
 					pic3.setVisible(false);
 					pic4.setVisible(false);
 					try {
-						textArea.append(functiePiataUnirii());
+						textArea.append(functiePiataMEminescu());
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
+					
 						e.printStackTrace();
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
+					
 						e.printStackTrace();
 					}
 				}
@@ -390,10 +386,10 @@ public class GUI extends ClasaSeparata{
 					try {
 						textArea.append(functiePalas());
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
+					
 						e.printStackTrace();
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
+					
 						e.printStackTrace();
 					}
 				}
@@ -406,10 +402,10 @@ public class GUI extends ClasaSeparata{
 					try {
 						textArea.append(functieUAIC());
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
+				
 						e.printStackTrace();
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
+					
 						e.printStackTrace();
 					}
 				}

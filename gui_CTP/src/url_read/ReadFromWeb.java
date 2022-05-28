@@ -7,7 +7,17 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * The class ReadFromWeb has a method readFromWeb that takes a String as an argument and returns a String
+ */
 public class ReadFromWeb {
+	/**
+	 * It takes a URL as a string, opens a stream to that URL, reads the stream line by line, and returns the contents of the
+	 * stream as a string
+	 *
+	 * @param webURL The URL of the web page you want to read.
+	 * @return A string of the text from the web page.
+	 */	
 	public static String readFromWeb(String webURL) throws IOException {
         URL url = new URL(webURL);
         InputStream is =  url.openStream();

@@ -18,7 +18,7 @@ public class ZoneDeInteres {
 	/**
 	 * It prints the location, latitude and longitude of the object
 	 */
-	void afisare(){
+	public void afisare(){
 		System.out.println("Locatie: " + locatie + ", Latitudine: "+ latitudine +", Longitudine: "+ longitudine);
 	}
 
@@ -31,7 +31,7 @@ public class ZoneDeInteres {
 	 * @param tramvai tramvaiul care trebuie sa fie verificat
 	 * @return The distance between the tram and the zone of interest.
 	 */
-	static double Distanta(ZoneDeInteres zona, TramvaieDeInteres tramvai){
+	public static double Distanta(ZoneDeInteres zona, TramvaieDeInteres tramvai){
 		final double fi1 = zona.latitudine * Math.PI/180;
 		final double fi2 = tramvai.latitudine * Math.PI/180;
 		final double lambda1 = zona.longitudine * Math.PI/180;
@@ -71,7 +71,7 @@ public class ZoneDeInteres {
 		double distanta_t1 = Distanta(zona,tramvai_t1);
 		double distanta_t2 = Distanta(zona,tramvai_t2);
 				
-		if(distanta_t1 < distanta_t2)
+		if(distanta_t1 > distanta_t2)
 			return "Tramvaiul se apropie de zona de interes!";
 		else 
 			return "Tramvaiul se indeparteaza de zona de interes!";

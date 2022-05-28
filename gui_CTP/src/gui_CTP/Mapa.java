@@ -155,7 +155,7 @@ public class Mapa extends MapView{
 				System.out.print(".");
 			}
 		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
+			
 			e1.printStackTrace();
 		}
 		System.out.println("|");
